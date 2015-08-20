@@ -1,13 +1,14 @@
 import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 public class Category { //class Category
     private int mId;
-    private String mName; 
+    private String mName;
     private static ArrayList<Category> instances = new ArrayList<Category>();
     private ArrayList<Task> mTasks;
 
   public Category(String name) {
-    mName = name; 
+    mName = name;
     instances.add(this); //add(this) adds this Category object being created to the ArrayListCategory
     mId = instances.size(); //persists across all unit tests
     mTasks = new ArrayList<Task>();// number of objects in array list
@@ -21,7 +22,7 @@ public class Category { //class Category
   public int getId(){
     return mId;
   }
-  
+
   public ArrayList<Task> getTasks() {
     return mTasks;
   }
@@ -37,7 +38,7 @@ public class Category { //class Category
   public static void clear() {
     instances.clear(); //dumps everything out of instances object
   }
-  
+
   public static Category find(int id) {
     try {
       return instances.get(id - 1);
